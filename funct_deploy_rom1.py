@@ -494,7 +494,7 @@ def startCommand(dock,mount_data_names_web,mount_data_names_db):
     write_log(log_control, msg)
     
     if (dock == "mysql8"):
-        cmd += "-e MYSQL_ROOT_PASSWORD=al19rab3$ "
+        cmd += "-e MYSQL_ROOT_PASSWORD=pass_db "
         for pre in mount_data_names_db:
             namedock = str(dock)
             nameVolume = pre+namedock
@@ -507,7 +507,7 @@ def startCommand(dock,mount_data_names_web,mount_data_names_db):
                 cmd += "-v "+nameVolume+":/"+pre.replace('_','')+" "
                
     elif (dock == "pspvDB"):
-        cmd += "-e POSTGRES_PASSWORD=al19rab3$ "
+        cmd += "-e POSTGRES_PASSWORD=pass_db "
         for pre in mount_data_names_db:
             namedock = str(dock)
             nameVolume = pre+namedock
